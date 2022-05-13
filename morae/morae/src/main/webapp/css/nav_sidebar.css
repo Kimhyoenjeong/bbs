@@ -1,0 +1,93 @@
+
+* {padding:0;margin:0;}
+input[id="menuicon"]{display:none;}
+
+/*header*/
+header{
+	width:100%;
+	background:#e5e5e5;
+}
+
+.header > div {
+	position:relation;
+	width:1200px;
+	margin:0 auto;
+}
+
+.header .navi{
+	font-size:0;
+}
+
+.header .navi .ul .li .a:first-child(1){
+	font-size:12px;
+	display:inline-black;
+	vertical-align:middle;
+}
+
+.header .navi .ul .li .a:nth-child(2){
+	display:black;
+	width:auto;
+	font-weight:900;
+}
+
+/* 메뉴버튼 */
+.menubtn {
+	display:block;
+	width:50px;
+	height:50px;
+	position:absolute;
+	top:50%;
+	right:10px;
+	transform:translateY(-50%);
+	cursor:pointer;
+}
+.menubtn span {
+	display:block;
+	position:absolute;
+	width:80%;
+	height:5px;
+	border-radius:30px;
+	background:#222;
+	transition:all .35s;
+}
+.menubtn span:nth-child(1) {
+	top:20%;
+	left:50%;
+	transform:translateX(-50%);
+}
+.menubtn span:nth-child(2) {
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+} 
+.menubtn span:nth-child(3) {
+	bottom:20%;
+	left:50%;
+	transform:translateX(-50%);
+}
+
+/* 컨텐츠영역 */
+.container {
+	width:100%;
+	height:100%;
+	position:relative;
+}
+.container {width:1200px;margin:0 auto;height:100%;border:1px solid #eee;background:#f1f1f1;}
+.container .content1 {width:1200px;margin:0 auto;height:100%;border:1px solid #eee;background:#f1f1f1;}
+.container .sidebar {position:fixed;top:0;right:-300px;width:300px;height:100%;background:#666;z-index:30;transition:.35s;}
+
+/* 체크 변화값 */
+input[id="menuicon"]:checked ~ header .menubtn {z-index:2;}
+input[id="menuicon"]:checked ~ header .menubtn span {background:#fff;}
+input[id="menuicon"]:checked ~ header .menubtn span:nth-child(1) {top:50%;left:50%;transform:translate(-50%,-50%) rotate(135deg);}
+input[id="menuicon"]:checked ~ header .menubtn span:nth-child(2) {left:50%;transform:translate(-50%,-50%) scale(2);opacity:0;}
+input[id="menuicon"]:checked ~ header .menubtn span:nth-child(3) {bottom:50%;left:50%;transform:translate(-50%,50%) rotate(-135deg);}
+input[id="menuicon"]:checked ~ .container .sidebar {right:0;}
+
+.menubtn {background:url("btn_bg.png") 0 0 no-repeat;}
+input[id="menuicon"]:checked ~ header .menubtn {background:url("btn_bg.png") -50px 0 no-repeat;}
+
+
+
+
+	
